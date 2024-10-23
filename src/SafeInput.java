@@ -18,5 +18,23 @@ public class SafeInput {
         return retString;
 
     }
+    public static int getInt(Scanner pipe, String prompt)
+    {
+        int retInt = 0;
+        String trash = "";
+        boolean done = false;
+        do {
+            System.out.print("\n" + prompt + ": ");
+            if (pipe.hasNextInt()) {
+                retInt = pipe.nextInt();
+                done = true;
+            } else {
+                trash = pipe.nextLine();
+                System.out.println("You said your favorite integer was: " + trash);
+                System.out.println("Input a valid integer.");
+            }
+        } while (!done);
+        return retInt;
+    }
 
 }
