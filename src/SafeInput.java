@@ -90,5 +90,39 @@ public class SafeInput {
 
         return retRangedInt;
     }
+    public static boolean getYNConfirm(Scanner pipe, String prompt)
+    {
+        String confirmYN;
+        String trash = "";
+        boolean done = false;
+        boolean confirmAnswer = false;
+        do {
+            System.out.print("\n" + prompt + ": ");
+            confirmYN = pipe.nextLine();
+            if (confirmYN.equalsIgnoreCase("Y") || confirmYN.equalsIgnoreCase("N"))
+            {
+
+                if (confirmYN.equalsIgnoreCase("Y"))
+                {
+                    confirmAnswer = true;
+                    done = true;
+                }
+                else
+                {
+                    confirmAnswer = false;
+                    done = true;
+                }
+            }
+            else
+            {
+
+                System.out.println("You said the statement is: " + confirmYN);
+                System.out.println("Input Y or N!");
+            }
+        } while (!done);
+
+
+        return confirmAnswer;
+    }
 
 }
