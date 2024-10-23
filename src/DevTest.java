@@ -1,3 +1,4 @@
+import java.util.Objects;
 import java.util.Scanner;
 public class DevTest {
 
@@ -126,6 +127,40 @@ public class DevTest {
 
         return retRangeDouble;
     }
+    public static boolean getYNConfirm(Scanner pipe, String prompt)
+    {
+        String confirmYN;
+        String trash = "";
+        boolean done = false;
+        boolean confirmAnswer = false;
+        do {
+            System.out.print("\n" + prompt + ": ");
+            confirmYN = pipe.nextLine();
+            if (confirmYN.equalsIgnoreCase("Y") || confirmYN.equalsIgnoreCase("N"))
+            {
+
+                if (confirmYN.equalsIgnoreCase("Y"))
+                {
+                    confirmAnswer = true;
+                    done = true;
+                }
+                else
+                {
+                    confirmAnswer = false;
+                    done = true;
+                }
+            }
+            else
+            {
+
+                System.out.println("You said the statement is: " + confirmYN);
+                System.out.println("Input Y or N!");
+            }
+        } while (!done);
+
+
+        return confirmAnswer;
+    }
 
    /* public static void main(String[] args) {
         Scanner pipe = new Scanner(System.in);
@@ -162,6 +197,7 @@ public class DevTest {
    }
 
      */
+    /*
     public static void main(String[] args)
     {
         double low  = 0.5;
@@ -171,4 +207,14 @@ public class DevTest {
         yourNumber = getRangedDouble(pipe, "Enter your favorite number" + " [" + low + "-" + high + "]", low , high);
         System.out.println(" \nYour favorite integer is: " + yourNumber );
     }
+
+     */
+   public static void main(String[] args)
+   {
+
+       Scanner pipe = new Scanner(System.in);
+       boolean trueOrFalse = false;
+       trueOrFalse = getYNConfirm(pipe, "Is this statement true");
+       System.out.println("Then this statement is " + trueOrFalse );
+   }
 }
