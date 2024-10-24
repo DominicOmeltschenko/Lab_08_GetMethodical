@@ -124,5 +124,28 @@ public class SafeInput {
 
         return confirmAnswer;
     }
+    public static String getRegExString(Scanner pipe, String prompt, String regEx)
+    {
+        String value = " ";
+        String trash = "";
+        boolean done = false;
+        do {
+            System.out.print("\n" + prompt + ": ");
+            value = pipe.nextLine();
+            if (value.matches(regEx))
+            {
+                done = true;
+            }
+            else
+            {
+                System.out.println("You said: " + value);
+                System.out.println("Please enter your social security number in the valid format [xxx-xx-xxxx]");
+            }
+
+        } while (!done);
+
+
+        return value;
+    }
 
 }

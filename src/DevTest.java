@@ -163,37 +163,26 @@ public class DevTest {
     }
     public static String getRegExString(Scanner pipe, String prompt, String regEx)
     {
-        String confirmYN;
+        String value = " ";
         String trash = "";
         boolean done = false;
-        boolean confirmAnswer = false;
         do {
             System.out.print("\n" + prompt + ": ");
-            confirmYN = pipe.nextLine();
-            if (confirmYN.equalsIgnoreCase("Y") || confirmYN.equalsIgnoreCase("N"))
+            value = pipe.nextLine();
+            if (value.matches(regEx))
             {
-
-                if (confirmYN.equalsIgnoreCase("Y"))
-                {
-                    confirmAnswer = true;
-                    done = true;
-                }
-                else
-                {
-                    confirmAnswer = false;
-                    done = true;
-                }
+                done = true;
             }
             else
             {
-
-                System.out.println("You said the statement is: " + confirmYN);
-                System.out.println("Input Y or N!");
+                System.out.println("You said: " + value);
+                System.out.println("Please enter your social security number in the valid format [xxx-xx-xxxx]");
             }
+
         } while (!done);
 
 
-        return confirmAnswer;
+        return value;
     }
 
    /* public static void main(String[] args) {
@@ -243,6 +232,7 @@ public class DevTest {
     }
 
      */
+    /*
    public static void main(String[] args)
    {
 
@@ -250,5 +240,16 @@ public class DevTest {
        boolean trueOrFalse = false;
        trueOrFalse = getYNConfirm(pipe, "Is this statement true");
        System.out.println("Then this statement is " + trueOrFalse );
+   }
+
+     */
+   public static void main(String[] args)
+   {
+
+       Scanner pipe = new Scanner(System.in);
+       String socialSecurityNumber = "";
+       socialSecurityNumber = getRegExString(pipe, "Enter your social security number [xxx-xx-xxxx]" ,"\\d{3}-\\d{2}-\\d{4}" );
+       System.out.println("Your social security number is: " + socialSecurityNumber);
+
    }
 }
