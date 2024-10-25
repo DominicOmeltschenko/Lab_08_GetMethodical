@@ -51,7 +51,7 @@ public class BirthDateTime {
 
         minute = SafeInput.getRangedInt(pipe, "Enter the minute of your birth " + " [" + low + "-" + high + "]", low, high);
 
-        System.out.println(year + " " + month + " " + day + " " + hour + " " + minute);
+        System.out.println("You were born in " + year + " in the month " + month + " on the day " + day + " in the hour " + hour + " at the minute " + minute);
     }
 
 }
