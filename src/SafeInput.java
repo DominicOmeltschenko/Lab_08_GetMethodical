@@ -195,6 +195,37 @@ public class SafeInput {
     public static void prettyHeader(String msg)
     {
 
+
+        for (int headerWidth = 60; headerWidth >= 0; headerWidth--)
+        {
+            System.out.print("*");
+        }
+        System.out.println();
+        for (int leftSide = 3; leftSide > 0; leftSide--)
+        {
+            System.out.print("*");
+        }
+        for (int centeredMessageLeft = (60 - 6 - msg.length() )/2; centeredMessageLeft >= 0; centeredMessageLeft --)
+        {
+            System.out.print(" ");
+        }
+        System.out.print(msg);
+        for (int centeredMessageRight = (60 - 6 - msg.length() )/2; centeredMessageRight >= 0; centeredMessageRight --)
+        {
+            System.out.print(" ");
+        }
+        for (int rightSide = 3; rightSide > 0; rightSide--)
+        {
+            System.out.print("*");
+        }
+        System.out.println();
+        for (int headerWidth = 60; headerWidth >= 0; headerWidth--)
+        {
+            System.out.print("*");
+        }
+        System.out.println();
+
+
     }
 
 }
