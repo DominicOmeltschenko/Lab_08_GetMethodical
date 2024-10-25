@@ -25,15 +25,21 @@ public class SafeInput {
         boolean done = false;
         do {
             System.out.print("\n" + prompt + ": ");
-            if (pipe.hasNextInt()) {
+            if (pipe.hasNextInt())
+            {
                 retInt = pipe.nextInt();
                 done = true;
-            } else {
+            }
+            else
+            {
                 trash = pipe.nextLine();
                 System.out.println("You said your favorite integer was: " + trash);
                 System.out.println("Input a valid integer.");
             }
         } while (!done);
+
+        pipe.nextLine();
+
         return retInt;
     }
     public static Double getDouble(Scanner pipe, String prompt)
@@ -43,6 +49,7 @@ public class SafeInput {
         boolean done = false;
         do {
             System.out.print("\n" + prompt + ": ");
+
             if (pipe.hasNextDouble())
             {
                 retDouble = pipe.nextDouble();
@@ -54,8 +61,10 @@ public class SafeInput {
                 System.out.println("You said your favorite number was: " + trash);
                 System.out.println("Input a valid number.");
             }
+
         } while (!done);
 
+        pipe.nextLine();
 
         return retDouble;
     }
@@ -77,6 +86,7 @@ public class SafeInput {
                 {
                     System.out.println("You said your favorite integer was: " + retRangedInt);
                     System.out.println("Input a valid integer." + " [" + low + "-" + high + "]");
+                    pipe.nextLine();
                 }
             }
             else
@@ -87,8 +97,42 @@ public class SafeInput {
             }
         } while (!done);
 
+        pipe.nextLine();
 
         return retRangedInt;
+    }
+    public static double getRangedDouble(Scanner pipe, String prompt, double low, double high)
+    {
+        double retRangedDouble = 0;
+        String trash = "";
+        boolean done = false;
+        do {
+            System.out.print("\n" + prompt + ": ");
+            if (pipe.hasNextDouble())
+            {
+                retRangedDouble = pipe.nextDouble();
+                if ( retRangedDouble >= low && retRangedDouble <= high)
+                {
+                    done = true;
+                }
+                else
+                {
+                    System.out.println("You said your favorite number was: " + retRangedDouble);
+                    System.out.println("Input a valid number." + " [" + low + "-" + high + "]");
+                    pipe.nextLine();
+                }
+            }
+            else
+            {
+                trash = pipe.nextLine();
+                System.out.println("You said your favorite number was: " + trash);
+                System.out.println("Input a valid number." + " [" + low + "-" + high + "]");
+            }
+        } while (!done);
+
+        pipe.nextLine();
+
+        return retRangedDouble;
     }
     public static boolean getYNConfirm(Scanner pipe, String prompt)
     {
@@ -144,6 +188,7 @@ public class SafeInput {
 
         } while (!done);
 
+        pipe.nextLine();
 
         return value;
     }
