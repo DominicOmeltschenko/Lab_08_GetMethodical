@@ -160,7 +160,7 @@ public class SafeInput {
             else
             {
 
-                System.out.println("You said the statement is: " + confirmYN);
+                System.out.println("You said: " + confirmYN);
                 System.out.println("Input Y or N!");
             }
         } while (!done);
