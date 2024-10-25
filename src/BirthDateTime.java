@@ -18,17 +18,35 @@ public class BirthDateTime {
 
         month = SafeInput.getRangedInt(pipe, "Enter the month of your birth " + " [" + low + "-" + high + "]", low, high);
 
-        low = 1;
-        high = 31;
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                high = 31;
+                break;
+            case 2:
+                high = 29;
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                high = 30;
+                break;
+        }
 
         day = SafeInput.getRangedInt(pipe, "Enter the day of your birth " + " [" + low + "-" + high + "]", low, high);
 
-        low = 1;
+
         high = 24;
 
         hour = SafeInput.getRangedInt(pipe, "Enter the hour of your birth " + " [" + low + "-" + high + "]", low, high);
 
-        low = 1;
+
         high = 59;
 
         minute = SafeInput.getRangedInt(pipe, "Enter the minute of your birth " + " [" + low + "-" + high + "]", low, high);
