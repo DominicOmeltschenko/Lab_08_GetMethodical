@@ -183,14 +183,18 @@ public class SafeInput {
             else
             {
                 System.out.println("You said: " + value);
-                System.out.println("Please enter your social security number in the valid format [xxx-xx-xxxx]");
+                System.out.println("Please enter your number in the valid format");
             }
 
         } while (!done);
 
-        pipe.nextLine();
+
 
         return value;
+    }
+    public static void prettyHeader(String msg)
+    {
+
     }
 
 }
