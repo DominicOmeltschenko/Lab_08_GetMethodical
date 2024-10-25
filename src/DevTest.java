@@ -235,6 +235,7 @@ public class DevTest {
    }
 
     */
+    /*
 
     public static void main(String[] args)
     {
@@ -245,7 +246,7 @@ public class DevTest {
         yourNumber = getRangedDouble(pipe, "Enter your favorite number" + " [" + low + "-" + high + "]", low , high);
         System.out.println(" \nYour favorite number is: " + yourNumber );
     }
-
+    */
 
     /*
    public static void main(String[] args)

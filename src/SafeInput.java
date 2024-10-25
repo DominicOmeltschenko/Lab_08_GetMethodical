@@ -84,7 +84,7 @@ public class SafeInput {
                 }
                 else
                 {
-                    System.out.println("You said your favorite integer was: " + retRangedInt);
+                    System.out.println("You said your integer was: " + retRangedInt);
                     System.out.println("Input a valid integer." + " [" + low + "-" + high + "]");
                     pipe.nextLine();
                 }
@@ -92,7 +92,7 @@ public class SafeInput {
             else
             {
                 trash = pipe.nextLine();
-                System.out.println("You said your favorite integer was: " + trash);
+                System.out.println("You said your integer was: " + trash);
                 System.out.println("Input a valid integer." + " [" + low + "-" + high + "]");
             }
         } while (!done);
@@ -117,7 +117,7 @@ public class SafeInput {
                 }
                 else
                 {
-                    System.out.println("You said your favorite number was: " + retRangedDouble);
+                    System.out.println("You said your value was: " + retRangedDouble);
                     System.out.println("Input a valid number." + " [" + low + "-" + high + "]");
                     pipe.nextLine();
                 }
@@ -125,7 +125,7 @@ public class SafeInput {
             else
             {
                 trash = pipe.nextLine();
-                System.out.println("You said your favorite number was: " + trash);
+                System.out.println("You said your value was: " + trash);
                 System.out.println("Input a valid number." + " [" + low + "-" + high + "]");
             }
         } while (!done);
